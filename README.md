@@ -23,3 +23,13 @@ node index.js
 ```sh
 nodemon index.js
 ```
+
+## Instructions for connecting the code to your bot via the Telegram API
+
+[Telegram API](https://core.telegram.org/api)
+
+### BOT TOKEN
+
+Create a file .env and add the API TOKEN to the BOT_TOKEN = " " variable
+
+Example in the .env.exemple file
