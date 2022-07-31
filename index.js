@@ -39,11 +39,10 @@ bot.command('hipster', Telegraf.reply('λ 🤴'))
  * Пасхалки от бота
  * Прослушивание бота на слово "hi, Hi, эхо, ЭХО"
  */
-bot.hears('эхо', (ctx) => {ctx.reply('⭕Чекрышка на майбахе⭕')})
+bot.hears(['эхо', 'ЭХО'], (ctx) => {ctx.reply('⭕Чекрышка на майбахе⭕')})
 
-bot.hears('ЭХО', (ctx) => {ctx.reply('⭕ЧЕКРЫШКА НА МАЙБАХЕ⭕')})
 
-bot.hears('hi', (ctx) => {
+bot.hears(['hi', 'HI', 'Hi'], (ctx) => {
     return ctx.replyWithMarkdown(`
 Hi, from Bot. 
 My name is Test PoliWeb Bot. 
@@ -53,14 +52,14 @@ Click here /author
 `)
 })
 
-bot.hears('Hi', (ctx) => {
+bot.hears(['привет', 'Привет', 'ПРИВЕТ'], (ctx) => {
     return ctx.replyWithMarkdown(`
-Hi, from Bot. 
-My name is Test PoliWeb Bot. 
-My nick - @testpoliwebBot
-Do you want to know who author is?
-Click here /author
-`)
+Привет!
+Моё имя Test PoliWeb Bot.
+Мой ник - @testpoliwebBot
+Хочешь узнать кто автор?
+Жми сюда /author
+    `)
 })
 
 /**
@@ -73,8 +72,7 @@ bot.on('message', (ctx) => {
 })
 
 // Запуск бота в консоле по команде: node index.js
-bot
-    .launch()
+bot.launch()
     .then(() => {
         console.log('BOT_TOKEN: OK 👍');
         console.log('Run Bot. Бот запущен и работает 👍');
